@@ -1,0 +1,1 @@
+{"name":"@jev/demo","private":true,"type":"module","scripts":{"build":"vite build","dev":"vite --host 127.0.0.1","typecheck":"tsc --noEmit"},"dependencies":{"@jev/voice":"0.1.0"},"devDependencies":{"vite":"^6.3.0","typescript":"^5.9.0"}}

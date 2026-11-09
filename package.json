@@ -1,0 +1,15 @@
+{
+  "name": "jev-voice-monorepo",
+  "private": true,
+  "workspaces": ["packages/typescript", "apps/demo/web"],
+  "scripts": {
+    "setup": "node scripts/dev.mjs setup",
+    "demo": "node scripts/dev.mjs demo",
+    "demo:offline": "node scripts/dev.mjs offline",
+    "build": "npm run build -w @jev/voice && npm run build -w @jev/demo",
+    "test": "npm run test -w @jev/voice",
+    "typecheck": "npm run typecheck -w @jev/voice && npm run typecheck -w @jev/demo",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {"@playwright/test": "^1.56.0"}
+}

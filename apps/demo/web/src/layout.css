@@ -1,0 +1,23 @@
+/* Compact demo layout; stage colors and charts live in style.css. */
+header { max-width: 920px; padding: 20px 28px; }
+main { max-width: 920px; }
+.hero { padding: 20px 0 16px; }
+h1 { font-size: clamp(36px, 5vw, 52px); margin: 14px 0; }
+.intro { font-size: 14px; }
+.voice-status { display: flex; align-items: center; justify-content: center; gap: 22px; margin: 22px 0 10px; text-align: left; }
+.orb { width: 74px; height: 74px; margin: 0; flex-shrink: 0; }
+.orb span { font-size: 42px; }
+#activity { margin: 0; font-size: 26px; }
+#connection { margin: 6px 0 0; }
+.controls { margin: 16px 0 10px; }
+.decision-card { max-width: 100%; margin: 20px auto 16px; }
+.try-line { font-size: 13px; line-height: 1.7; color: #596b54; }
+.setup-notice { padding: 14px; background: #faf0d8; border: 1px solid #d8bf86; border-radius: 10px; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
+.lower { margin-top: 26px; padding: 24px 0; }
+button:disabled { cursor: not-allowed; }
+@media (max-width: 650px) {
+  header { padding: 16px 20px; }
+  .voice-status { gap: 16px; }
+  #activity { font-size: 24px; }
+  .decision-card { padding: 16px; }
+}
