@@ -1,6 +1,12 @@
 # Jev Voice
 
-Local-first monorepo for a Python voice-agent SDK and a TypeScript browser client. The included comparison demo uses **both packages**, with a switch between Jev turn-taking and a fixed silence timeout.
+When I saw how low Jev's latency was, I realized I could place it between speech-to-text (STT) and the LLM to decide when to wait and when to respond. A pause doesn't always mean someone has finished their thought—and handing off too early makes a voice assistant interrupt them.
+
+The results in my testing were surprisingly good: fewer premature interruptions and more natural conversations. This repo turns that experiment into a Python voice-agent SDK, a TypeScript browser client, and a local playground so you can try it yourself.
+
+The idea is simple: **STT → Jev turn-taking gate → LLM → TTS**. Jev can hold an unfinished thought, yield a completed turn, or signal uncertainty; the controller keeps waiting bounded so the conversation doesn't hang indefinitely. This gate decides when to hand the user's words to the LLM—stopping assistant audio when the user speaks again is handled separately by the pipeline.
+
+The included demo uses **both packages**, with a switch between Jev turn-taking and a fixed silence timeout while keeping the response providers the same. Try the same words and pauses in each mode, and inspect the decisions and per-turn latency. These are observations from an experiment, not a claim of benchmark superiority.
 
 This is an unpublished development SDK. It uses Pipecat internally for streaming providers, audio processing and WebRTC; it does not fork Pipecat. No Pipecat UI or client is required. Provider calls incur charges.
 
